@@ -1,2 +1,3 @@
 #!/bin/bash
-for i in {7..0}; do printf "%d" "$(( ($1 >> i) & 1 ))"; done; echo
+binary=$(echo "obase=2;$1" | bc)
+printf "%08d\n" "$binary"
